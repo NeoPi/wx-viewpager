@@ -1,0 +1,3 @@
+<viewpager tabs="{{tabs}}" mode="fixed" generic:pager-item="fastmatch">
+
+</viewpager>

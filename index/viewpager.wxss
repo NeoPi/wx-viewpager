@@ -1,0 +1,40 @@
+/* components/viewpager/viewpager.wxss */
+.h {
+    width: 100vw;
+    height: 48px;
+    display: flex;
+    flex-direction: row;
+    box-sizing: border-box;
+    box-shadow: 0 0 5px #cdcdcd;
+  }
+  .scroll-h {
+    white-space: nowrap;
+  }
+  
+  .fix-h {
+      
+  }
+  
+  .tab-item {
+    text-align: center;
+    font-size: 0.9rem;
+    padding: 0px 10px;
+    margin: auto 0;
+  }
+  
+  .scroll-tab-item {
+    min-width: 2rem;
+  }
+  
+  .fix-tab-item {
+    flex: 1;
+    height: 28px;
+    font-size: 0.8rem;
+  }
+  
+  .tab-active {
+    color: rgb(0, 80, 0);
+    font-size: 1rem;
+    font-weight: bold;
+  }
+  

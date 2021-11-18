@@ -1,0 +1,17 @@
+<scroll-view wx:if="{{mode == 'scrollable'}}" scroll-x="true" class="h scroll-h " enable-flex="true">
+    <view class="tab-item  scroll-tab-item {{currentIndex == index ?  'tab-active' : ''}}" wx:for="{{tabs}}"
+        data-index="{{index}}" wx:key="index" bindtap="onSelected">{{item.title}} </view>
+</scroll-view>
+
+<view class="h fix-h" wx:else>
+    <view class="tab-item fix-tab-item {{currentIndex == index ?  'tab-active' : ''}}" wx:for="{{tabs}}"
+        data-index="{{index}}" wx:key="index" bindtap="onSelected">{{item.title}} </view>
+</view>
+
+<swiper style="height: 100%;" bindchange="onSwiperChange" current="{{currentIndex}}">
+    <block wx:for="{{tabs}}" wx:key="index" >
+        <swiper-item style="height: 100%;background-color: brown;">
+            <pager-item url="{{item.url}}"></pager-item>
+        </swiper-item>
+    </block>
+</swiper>

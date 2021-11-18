@@ -1,0 +1,2 @@
+<!--components/fastmatch/match.wxml-->
+<view>loaded url: {{url}}</view>
