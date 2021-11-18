@@ -4,7 +4,8 @@
 @[TOC]
 # 微信小程序实现类似Android原生ViewPager的功能
 
-## 先直接来看下效果图![9edfe25b51daec2d8846b39336e1265c.gif](en-resource://database/973:1)
+## 先直接来看下效果图
+![viewpager.gif](https://github.com/NeoPi/wx-viewpager/blob/master/screen/viewpager.gif)
 
 ## 再来说说我们要实现的功能
 > * 类似tabbar的标题栏，还得支持滑动模式（scrollable）和固定模式（fixed）
@@ -84,11 +85,14 @@
 
 
 **此时tabbar部分已经完成，看下效果图**
+
 **mode="fixed"**
-![f1cefdf6c3e8f31417ae7dacf068cda9.gif](en-resource://database/975:1)
+
+![viewpager-tabbar.gif](https://github.com/NeoPi/wx-viewpager/blob/master/screen/viewpager-tabbar.gif)
 
 **mode="scrollable"**
-![2cef4c8f08a446a889230685df74f562.gif](en-resource://database/977:1)
+
+![viewpager-scrollable.gif](https://github.com/NeoPi/wx-viewpager/blob/master/screen/viewpager-tabbar-scrollable.gif)
 
 ##### 使用swiper+swiper-item实现可滑动容器布局
 >组件既要实现左右滑动，还要实现tabbar选中跟随滑动改变选中样式，对swiper的监听bindchange来实现，而且为了保证swiper-item的数量跟tabbar保持一致，此处我们就使用了tab部分自定义的属性tabs的值
@@ -120,7 +124,7 @@ methods: {
 }
 ```
 看效果图
-![72ee72c3328c86c4f9d4f20de966afd7.gif](en-resource://database/979:1)
+![viewpager-swiper.gif](https://github.com/NeoPi/wx-viewpager/blob/master/screen/viewpager-tabbar-swiper.gif)
 
 到此基本上功能已经实现的差不多了，但是其实在实际的应用过程中，做过Android开发的小伙伴肯定知道每一个tab绑定的是一个业务独立的fragment，但是我们这里没有fragment组件可用，而且为了业务独立，降低耦合度，我在demo中使用了**虚拟节点**+**业务组件**的模式来进行解耦，所有看到这里有细心的小伙伴就理解我在上面自定义viewpager的时候**为啥tabs属性的数据要传一个带url的对象数组了**，就是要曲线完成这部分功能，接下来我对这部分代码进行一下拆分讲解，有对小程序虚拟节点不了解的可以点击[【传送门】](https://developers.weixin.qq.com/miniprogram/dev/framework/custom-component/generics.html)查看官方文档
 
